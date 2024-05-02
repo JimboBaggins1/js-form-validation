@@ -9,18 +9,18 @@ form {
 }
 
 form > div {
-    display: flex;
-    justify-content: start;
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 2fr;
     width: 60%;
-    /* column-gap: 30px; */
 }
 
 div > label {
-    flex: 1;
+    grid-area: 1 / 1 / 2 / 2;
+
 }
 
 div > input {
-    flex: 2;
+    grid-area: 1 / 2 / 2 / 3;
     border-radius: 5px;
     border: 1px solid black;
     padding: 2px 5px;
@@ -33,5 +33,25 @@ div > input:focus {
 }
 
 div > input:invalid {
-    border: 2px solid red;
+    /* background-color: #fecaca; */
+}
+
+div > input:focus:invalid {
+    outline: none;
+    /* background-color: #fecaca; */
+    border: 1px solid #dc2626;
+}
+
+.error {
+    grid-area: 2 / 2 / 3 / 3;
+    
+}
+
+.active {
+    padding: 0.3em;
+
+    font-size: 1em;
+    color: white;
+    background-color: #dc2626;
+    border-radius: 5px 5px;
 }
